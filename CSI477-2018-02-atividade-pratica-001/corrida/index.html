@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>Apuração de corridas de rolimãs</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/race.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/racer.js"></script>
+</head>
+
+<body>
+    <div class="main-background-image"></div>
+    <div class="card text-white centered-card" style="background-color: rgba(0, 0, 0, 0.7)">
+        <h2 class="card-header text-center font-weight-bold py-3" style="background-color: rgba(0, 0, 0, 0.4)">Apuração de resultados</h2>
+        <div class="card-body">
+            <div id="table-div">
+                <div class="d-flex justify-content-between">
+                    <h6 class="font-weight-normal">Informe os competidores por ordem de largada</h6>
+                    <span class="table-add float-right mb-2 mr-2">
+                        <a href="#!" class="text-success">
+                            <i id="btnAddRow" class="fa fa-plus fa-lg" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>
+                <table id="tableRace" class="table text-center table-responsive-md table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="py-2">Largada</th>
+                            <th scope="col" class="py-2">Competidor(a)</th>
+                            <th scope="col" class="py-2">Tempo(s)</th>
+                            <th scope="col" class="py-2">Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="alert alert-danger" style="display: none" id="alertMaximum">
+                    <span>O máximo de competidores é 6!</span>
+                </div>
+                <div class="alert alert-danger" style="display: none" id="alertEmptyFields">
+                    <span>Por favor, preencha todos os campos!</span>
+                </div>
+                <div class="alert alert-danger" style="display: none" id="alertNoData">
+                    <span>Insira algum dado antes de continuar.</span>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <button id="btnSubmit" type="button" class="btn btn-success" style="width: 150px">Submeter</button>
+                    </div>
+                    <div class="col-sm">
+                        <button id="btnClear" type="button" class="btn btn-info" style="width: 150px">Limpar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="result-table-div" style="display: none">
+                <h6 class="mb-3 font-weight-normal d-flex justify-content-start">Resultados finais da corrida</h6>
+                <table id="tableResults" class="table text-center table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th scope="col">Posição</th>
+                            <th scope="col">Largada</th>
+                            <th scope="col">Competidor(a)</th>
+                            <th scope="col">Tempo(s)</th>
+                            <th scope="col">Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button id="btnBack" type="button" class="btn btn-primary" style="width: 150px">Voltar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

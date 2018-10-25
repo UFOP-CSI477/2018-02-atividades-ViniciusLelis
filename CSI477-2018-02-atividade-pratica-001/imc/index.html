@@ -1,0 +1,112 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Form - Cálculo IMC</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/imc.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="main-background-image"></div>
+    <div class="card text-center centered-card bg-light">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a id="calculate-nav" class="nav-link active" href="#">Cálculo</a>
+                </li>
+                <li class="nav-item">
+                    <a id="table-nav" class="nav-link" href="#">Tabela</a>
+                </li>
+            </ul>
+        </div>
+        <div id="card-calculate" class="card-body">
+            <div id="calculate-div">
+                <h5 class="card-title">Calcule seu IMC</h5>
+                <p class="card-text">Informe seu peso e altura para receber uma classificação de acordo com seu IMC.</p>
+                <form name="data">
+                    <div class="form-group d-flex justify-content-center" id="group-weight">
+                        <label for="weight-value" id="label-weight" style="width: 70px">Peso</label>
+                        <input type="text" name="weight-value" value="" class="form-control w-25">
+                    </div>
+
+                    <div class="form-group d-flex justify-content-center mb-4" id="group-height">
+                        <label for="height-value" id="label-height" style="width: 70px">Altura</label>
+                        <input type="text" name="height-value" value="" class="form-control w-25">
+                    </div>
+                </form>
+                <div class="alert alert-danger" style="display: none" id="alertEmptyFields">
+                    <span>Por favor, preencha todos os campos!</span>
+                </div>
+                <a id="btnCalculate" href="#" class="btn btn-success">Calcular</a>
+            </div>
+            <div id="result-div" style="display: none">
+                <h2 class="card-title">Resultado</h2>
+                <h6 class="card-text mb-4 font-weight-normal">Acompanhe seus resultados abaixo.</h6>
+                <h1 id="bmi-label"></h1>
+                <div class="d-flex justify-content-center">
+                    <h4>Sua classificação é:&nbsp</h4>
+                    <h4 id="bmi-class-label"></h4>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <p>Para sua altura, o peso ideal está entre:&nbsp</p>
+                    <p id="ideal-weight-label"></p>
+                </div>
+                <a id="btnBack" href="#" class="btn btn-primary">Voltar</a>
+            </div>
+        </div>
+        <div id="card-table" class="card-body" style="display: none">
+            <h5 class="card-title">Tabela IMC</h5>
+            <p class="card-text">Classificação do IMC para adultos de acordo com IMC:</p>
+            <div class="d-flex justify-content-center">
+                <table class="table table-sm table-bordered w-50 text-center table-responsive-md">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">IMC</th>
+                            <th scope="col">Classificação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abaixo de 18,5</td>
+                            <td>Subnutrição</td>
+                        </tr>
+                        <tr>
+                            <td>Entre 18,5 e 24,5</td>
+                            <td>Peso Saudável</td>
+                        </tr>
+                        <tr>
+                            <td>Entre 24,5 e 29,9</td>
+                            <td>Sobrepeso</td>
+                        </tr>
+                        <tr>
+                            <td>Entre 30,0 e 34,9</td>
+                            <td>Obesidade grau 1</td>
+                        </tr>
+                        <tr>
+                            <td>Entre 35,0 e 39,9</td>
+                            <td>Obesidade grau 2</td>
+                        </tr>
+                        <tr>
+                            <td>Acima de 40</td>
+                            <td>Obesidade grau 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="card-footer text-muted">&#9400 Vinícius Victor, Outubro de 2018.</div>
+    </div>
+</body>
+
+</html>
